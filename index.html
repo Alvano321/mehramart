@@ -73,6 +73,25 @@
       text-decoration: none;
       font-size: 18px;
     }
+    .track-container input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+    .track-container button {
+      background-color: darkorange;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .track-result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
     footer {
       background-color: #333;
       color: white;
@@ -94,6 +113,11 @@
   </div>
 
   <div class="section">
+    <h2>About Us</h2>
+    <p>Mehra Mart is a local retail store proudly serving quality grocery and traditional sweets from Dera Ghazi Khan and Multan. Our mission is to deliver authentic products with care, love, and quick service across Pakistan and globally.</p>
+  </div>
+
+  <div class="section">
     <h2>Why Shop With Us?</h2>
     <ul>
       <li>✅ Original Multani Sohan Halwa</li>
@@ -109,7 +133,6 @@
     <img src="https://i.ibb.co/VjY5H7R/cooking-oil.jpg" alt="Cooking Oil" />
     <img src="https://i.ibb.co/hX1zk1P/spices.jpg" alt="Spices" />
   </div>
-
   <div class="section form-container">
     <h2>Place Your Order</h2>
     <form action="https://formsubmit.co/personalmygm76@gmail.com" method="POST">
@@ -123,6 +146,13 @@
     </form>
   </div>
 
+  <div class="section track-container">
+    <h2>Track Your Order</h2>
+    <input type="text" id="trackingId" placeholder="Enter your Order ID">
+    <button onclick="trackOrder()">Track</button>
+    <div id="trackResult" class="track-result"></div>
+  </div>
+
   <div class="whatsapp-btn">
     <a href="https://wa.me/923052722877" target="_blank">📱 Order Now on WhatsApp</a>
   </div>
@@ -130,6 +160,19 @@
   <footer>
     <p>© 2025 Mehra Mart | All Rights Reserved</p>
   </footer>
+
+  <script>
+    function trackOrder() {
+      var id = document.getElementById("trackingId").value.trim();
+      var result = document.getElementById("trackResult");
+      if (id === "") {
+        result.innerText = "⚠️ Please enter your Order ID.";
+      } else {
+        // You can integrate real tracking here later
+        result.innerText = "✅ Order ID '" + id + "' is being processed. We'll contact you soon!";
+      }
+    }
+  </script>
 
 </body>
 </html>
